@@ -2,7 +2,7 @@
 //What is the largest prime factor of the number 600851475143 ?
 let primeFactors= []
 let mayorprimeFactors= 0
-let numberToFind = 60085
+let numberToFind = 600851475143
 let numberValidation = 0
 let findFactorial = (number)=>{
     for (let i = 1; i <= 10000; i++) {

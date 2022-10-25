@@ -3,22 +3,57 @@
 //1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
 //find the sum of the even-valued terms.
-let maxNumbers = 28
-let numberOne = 1
-let numberTwo = 2
-let arrayFibonacci= [numberOne,numberTwo]
-let totalValueArrayFibonacci = 0
-let fibonacci = (maxNumbers)=>{
-    for (let i = 2; i < maxNumbers; i++) {
-        arrayFibonacci[i] = arrayFibonacci[i-2] + arrayFibonacci[i-1]
-    }
+// let maxNumbers = 27
+// let numberOne = 1
+// let numberTwo = 2
+// let arrayFibonacci= [numberOne,numberTwo]
+// let totalValueArrayFibonacci = 0
+// let fibonacci = (maxNumbers)=>{
+//     for (let i = 2; i < maxNumbers; i++) {
+//         arrayFibonacci[i] = arrayFibonacci[i-2] + arrayFibonacci[i-1]
+//     }
+// }
+
+// let valueUniform = (maxArrayValue)=>{
+//     for (let i = 0; i < maxArrayValue.length; i++) {
+//         totalValueArrayFibonacci += maxArrayValue[i]
+//     }
+// }
+// fibonacci(maxNumbers)
+// valueUniform(arrayFibonacci)
+// console.log(totalValueArrayFibonacci);
+// console.log(arrayFibonacci);
+
+
+// let limit = 40;
+// let fibo = [1, 2];
+// let maxnumber = 0
+// for (i = 2; i <= limit; i++) {
+//     if ( maxnumber < 4000000 ){
+//       fibo.push(fibo[i - 1] + fibo[i - 2]);
+//       maxnumber = fibo[i - 1] + fibo[i - 2]
+//       console.log(maxnumber);
+//     }
+// }
+
+
+let limit = 60;
+let fibo = [1, 2];
+
+let total = 0;
+
+for (i = 2; i <= limit; i++) {
+  fibo.push(fibo[i - 1] + fibo[i - 2]);
+  if (fibo[i] >= 3524578) {
+    break;
+  }
 }
-let valueUniform = (maxArrayValue)=>{
-    for (let i = 0; i < maxArrayValue.length; i++) {
-        totalValueArrayFibonacci += maxArrayValue[i]
+
+fibo.forEach((element) => {
+    if ( element % 2 == 0) {
+        total = total + element;
     }
-}
-fibonacci(maxNumbers)
-valueUniform(arrayFibonacci)
-console.log(totalValueArrayFibonacci);
-console.log(arrayFibonacci);
+});
+
+console.log(fibo);
+console.log(total);
