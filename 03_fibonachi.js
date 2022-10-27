@@ -3,17 +3,17 @@
 //1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 //find the sum of the even-valued terms.
-let maxNumbers = 100
+let maxNumberToFind = 4000000 
 let arrayFibonacci= [1,2]
-let fibonacci = (maxNumbers)=>{
-  for (let i = 2; i < maxNumbers; i++) {
+let fibonacci = (maxNumber)=>{
+  for (let i = 2; i < 1000; i++) {
     arrayFibonacci.push(arrayFibonacci[i-2] + arrayFibonacci[i-1])
-    if (arrayFibonacci[i] >= 4000000) {
+    if (arrayFibonacci[i] >= maxNumber) {
       break
     }
   }
 }
-fibonacci(maxNumbers)
+fibonacci(maxNumberToFind)
 let total2 = 0
 arrayFibonacci.forEach( (element) =>{
   if( element % 2 == 0 ){
